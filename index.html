@@ -22,7 +22,8 @@
 
         .container h1 {
             color: white;
-            border-bottom: 5px solid rgb(43, 7, 151);
+            border-bottom: 5px solid rgb(82, 34, 227);
+            padding: 3px;
         }
 
         .box input {
@@ -47,6 +48,14 @@
             color: white;
             border-color: black;
         }
+
+        .container2{
+            margin: 15px;
+        }
+
+        #eye{
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -60,8 +69,13 @@
         <div class="box">
             <i class="fa-solid fa-lock"></i>
             <input type="password" id="password" class="password" placeholder="Enter your password">
+            <i id="eye" class="fa-solid fa-eye"></i>
         </div>
         <button id="button">Sign-In</button>
+        <br>
+        <div class="container2">
+            Have already an account? <b><a href="login.html">Login here</a></b>
+        </div>
     </div>
     <script>
         document.getElementById("button").addEventListener("click", function () {
@@ -72,6 +86,15 @@
                 alert("Invalid email ID");
             }
         })
+        document.getElementById("eye").addEventListener("click", function () {
+            let show = document.getElementById("password")
+            if (show.type === "password") {
+                show.type = "text";
+            } else {
+                show.type = "password";
+            }
+        }
+        )
     </script>
 </body>
 
