@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <script src="https://kit.fontawesome.com/4141ede6dc.js" crossorigin="anonymous"></script>
+    <title>Login page</title>
+    <style>
+        body {
+            background-image: url(https://images.unsplash.com/photo-1505180136319-4f31bf56ca9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            position: absolute;
+            left: 40%;
+            top: 30%;
+        }
+
+        .container h1 {
+            color: black;
+            border-bottom: 5px solid brown;
+            padding: 3px;
+        }
+
+        .box input {
+            background: none;
+            font-size: 20px;
+            color: white;
+            padding: 5px 10px;
+            margin: 13px 3px;
+            outline: none;
+            border: none;
+        }
+
+        #button {
+            cursor: pointer;
+            /* font-size: large; */
+            border-radius: 5px;
+            margin: 10px;
+            padding: 4px 15px;
+            background: none;
+            outline: none;
+            /* border: none; */
+            color: white;
+            border-color: black;
+        }
+
+        .container2 {
+            margin: 15px;
+            color: white;
+        }
+
+        #eye1,#eye2{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Log In</h1>
+        <div class="box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="email" class="email" placeholder="Enter your email">
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="password" class="password" placeholder="Enter your password">
+            <i id="eye1" class="fa-solid fa-eye"></i>
+        </div>
+        <div class="box">
+            <!-- <i class="fa-solid fa-lock"></i> -->
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="Cpassword" class="Cpassword" placeholder="Confirm password">
+            <i id="eye2" class="fa-solid fa-eye"></i>
+        </div>
+        <button id="button">Log-In</button>
+        <br>
+        <div class="container2">
+            Don't have an account? &nbsp; <b><a href="index.html">Sign-In</a></b>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("button").addEventListener("click", function () {
+            const email = document.getElementById("email");
+            if (!email.value.endsWith("@gmail.com")) {
+                //alert("Successfully Logged in");
+                alert("Invalid email ID");
+            }
+            else {
+                const pass = document.getElementById("password")
+                const cpass = document.getElementById("Cpassword")
+                if (pass.value === cpass.value) {
+                    alert("Successfully Logged in");
+                }
+                else {
+                    alert("Recheck the password again");
+                }
+            }
+
+        })
+        document.getElementById("eye1").addEventListener("click", function () {
+            let show = document.getElementById("password")
+            if (show.type === "password") {
+                show.type = "text";
+            } else {
+                show.type = "password";
+            }
+        }
+        )
+        document.getElementById("eye2").addEventListener("click", function () {
+            let show2 = document.getElementById("Cpassword")
+            if (show2.type === "password") {
+                show2.type = "text";
+            } else {
+                show2.type = "password";
+            }
+        }
+        )
+    </script>
+</body>
+
+</html>
