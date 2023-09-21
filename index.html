@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/4141ede6dc.js" crossorigin="anonymous"></script>
+    <title>Landing page</title>
+    <style>
+        body {
+            background-image: url(https://images.unsplash.com/photo-1503601350100-26336a6beda2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            position: absolute;
+            left: 75%;
+            top: 35%;
+        }
+
+        .container h1 {
+            color: white;
+            border-bottom: 5px solid rgb(43, 7, 151);
+        }
+
+        .box input {
+            background: none;
+            font-size: 20px;
+            color: white;
+            padding: 5px 10px;
+            margin: 13px 3px;
+            outline: none;
+            border: none;
+        }
+
+        #button {
+            cursor: pointer;
+            /* font-size: large; */
+            border-radius: 5px;
+            margin: 10px;
+            padding: 4px 15px;
+            background: none;
+            outline: none;
+            /* border: none; */
+            color: white;
+            border-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <div class="box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="email" class="email" placeholder="Enter your email">
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="password" class="password" placeholder="Enter your password">
+        </div>
+        <button id="button">Sign-In</button>
+    </div>
+    <script>
+        document.getElementById("button").addEventListener("click", function () {
+            const email = document.getElementById("email");
+            if (email.value.endsWith("@gmail.com")) {
+                alert("Successfully Signed in");
+            } else {
+                alert("Invalid email ID");
+            }
+        })
+    </script>
+</body>
+
+</html>
